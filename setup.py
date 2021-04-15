@@ -7,7 +7,7 @@ def main():
           description="Python interface for the Knuth-Morris-Pratt algorithm C library function",
           author="Evgenii Kozhanov",
           author_email="evgenii.kozhanov@gmail.com",
-          ext_modules=[Extension("match_string", ["match_string_module.c"])])
+          ext_modules=[Extension("knuth_morris_pratt_algorithm", ["match_string_module.c"])])
 
 
 if __name__ == "__main__":

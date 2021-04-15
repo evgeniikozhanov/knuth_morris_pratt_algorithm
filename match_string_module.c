@@ -7,7 +7,7 @@ typedef struct {
 
 matchStringResult * match_string(const char * sample_str, const char * text_str) {
     matchStringResult * msr = malloc(sizeof(matchStringResult));
-    msr->result_length = 0;
+    msr->result_length = 1;
     msr->result = malloc(sizeof(msr->result) * 1);
     msr->result[0] = "test string";
     return msr;
@@ -34,13 +34,13 @@ static PyObject * method_match_string(PyObject *self, PyObject *args) {
 }
 
 static PyMethodDef MatchStringMethods[] = {
-    {"match_string", method_match_string, METH_VARARGS, "Python interface for match_string C library function"},
+    {"knuth_morris_pratt_algorithm", method_match_string, METH_VARARGS, "Python interface for match_string C library function"},
     {NULL, NULL, 0, NULL}
 };
 
 static struct PyModuleDef match_string_module = {
     PyModuleDef_HEAD_INIT,
-    "match_string",
+    "knuth_morris_pratt_algorithm",
     "Python interface for the match_string C library function",
     -1,
     MatchStringMethods
