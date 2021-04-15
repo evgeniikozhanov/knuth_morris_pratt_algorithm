@@ -34,11 +34,11 @@ static PyObject * method_match_string(PyObject *self, PyObject *args) {
 }
 
 static PyMethodDef MatchStringMethods[] = {
-    {"knuth_morris_pratt_algorithm", method_match_string, METH_VARARGS, "Python interface for match_string C library function"},
+    {"match_string", method_match_string, METH_VARARGS, "Python interface for match_string C library function"},
     {NULL, NULL, 0, NULL}
 };
 
-static struct PyModuleDef match_string_module = {
+static struct PyModuleDef knuth_morris_pratt_algorithm_module = {
     PyModuleDef_HEAD_INIT,
     "knuth_morris_pratt_algorithm",
     "Python interface for the match_string C library function",
@@ -46,6 +46,6 @@ static struct PyModuleDef match_string_module = {
     MatchStringMethods
 };
 
-PyMODINIT_FUNC PyInit_match_string(void) {
-    return PyModule_Create(&match_string_module);
+PyMODINIT_FUNC PyInit_knuth_morris_pratt_algorithm(void) {
+    return PyModule_Create(&knuth_morris_pratt_algorithm_module);
 }
