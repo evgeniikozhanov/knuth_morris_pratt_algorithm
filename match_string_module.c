@@ -9,8 +9,8 @@ int * compute_prefix_function(const char * s) {
     int m = sizeof(s);
     int * pi = malloc(sizeof(int) * m);
     pi[0] = 0;
-    int k = -1;
-    for (int i = 1; i < m - 1; i++) {
+    int k = 0;
+    for (int i = 1; i < m; i++) {
         k = pi[i - 1];
         while ((k > 0) && (s[i] != s[k])) {
              k = pi[k - 1];
