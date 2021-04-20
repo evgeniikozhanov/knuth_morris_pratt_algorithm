@@ -1,10 +1,10 @@
 # Knuth-Morris-Pratt algorithm
 
-It's just my first module in C for Python.
+It's just a small module in C for Python.
 
-The module implement Knuth-Morris-Pratt algorithm for string matching.
+The module implements Knuth-Morris-Pratt algorithm for string matching.
 
-Example of using:
+The example of using:
 
 ```
 >> import knuth_morris_pratt_algorithm
