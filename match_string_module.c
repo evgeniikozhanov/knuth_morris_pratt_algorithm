@@ -33,7 +33,7 @@ matchStringResult * match_string(const char * sample_str, const char * text_str)
     int q = 0;
     for (int i = 0; i < n; i++) {
         while ((q > 0) && (sample_str[q] != text_str[i])) {
-            q = pi[q];
+            q = pi[q - 1];
         }
         if (sample_str[q] == text_str[i]) {
             ++q;
