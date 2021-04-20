@@ -27,22 +27,22 @@ matchStringResult * match_string(const char * sample_str, const char * text_str)
     matchStringResult * msr = malloc(sizeof(matchStringResult));
     msr->result_length = 0;
     msr->result = malloc(sizeof(int));
-    int n = sizeof(text_str);
-    int m = sizeof(sample_str);
+    int n = strlen(text_str);
+    int m = strlen(sample_str);
     int * pi = compute_prefix_function(sample_str);
     int q = 0;
     for (int i = 0; i < n; i++) {
-        while ((q > 0) && (sample_str[q + 1] != text_str[i])) {
+        while ((q > 0) && (sample_str[q] != text_str[i])) {
             q = pi[q];
         }
-        if (sample_str[q + 1] == text_str[i]) {
+        if (sample_str[q] == text_str[i]) {
             ++q;
         }
         if (q == m) {
             msr->result_length += 1;
             msr->result = realloc(msr->result, sizeof(int) * msr->result_length);
             msr->result[msr->result_length - 1] = i - m + 1;
-            q = pi[q];
+            q = pi[q - 1];
         }
     }
     free(pi);
